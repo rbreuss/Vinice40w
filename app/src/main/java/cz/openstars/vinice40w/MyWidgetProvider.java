@@ -70,7 +70,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
             remoteViews.setTextViewText(R.id.tbar, "Tbar: " + (tbar != null ? tbar.substring(1, tbar.length()-2) : null) + " C");
             remoteViews.setTextViewText(R.id.tmin, "Tmin: " + (tmin != null ? tmin.substring(1, tmin.length() - 2) : null) +" C");
             remoteViews.setTextViewText(R.id.tmax, "Tmax: " + (tmax != null ? tmax.substring(1, tmax.length() - 2) : null) +" C");
-            remoteViews.setTextViewText(R.id.srazky, "Srážky: " + (srazky != null ? srazky.substring(1, srazky.length() - 2) : null) +" mm");
+            remoteViews.setTextViewText(R.id.srazky, "Srážky: " + (srazky != null ? srazky.substring(1, srazky.length() - 3) : null) +" mm");
             remoteViews.setTextViewText(R.id.stredni, "Střední: " + (stredni != null ? stredni.substring(1, stredni.length() - 2) : null) +" mm              ");
             remoteViews.setTextViewText(R.id.kalamita, "Kalamita: " + (kalamita != null ? kalamita.substring(1, kalamita.length() - 2) : null) +" mm");
             remoteViews.setTextViewText(R.id.RH, "RH: " + (RH != null ? RH.substring(1, RH.length() - 2) : null) +" %");
