@@ -74,7 +74,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
             remoteViews.setTextViewText(R.id.stredni, "Střední: " + (stredni != null ? stredni.substring(1, stredni.length() - 2) : null) +" mm              ");
             remoteViews.setTextViewText(R.id.kalamita, "Kalamita: " + (kalamita != null ? kalamita.substring(1, kalamita.length() - 2) : null) +" mm");
             remoteViews.setTextViewText(R.id.RH, "RH: " + (RH != null ? RH.substring(1, RH.length() - 2) : null) +" %");
-            remoteViews.setTextViewText(R.id.pbar, "Dnešní: " + (pbar != null ? pbar.substring(1, pbar.length() - 5) : null) +" mm");
+            remoteViews.setTextViewText(R.id.pbar, "Dnešní: " + (pbar != null ? pbar.substring(1, pbar.length() - 4) : null) +" mm");
             remoteViews.setTextViewText(R.id.update, today.format("%k:%M:%S"));
             remoteViews.setTextViewText(R.id.placeholder1, "Vinice 4.0");
             remoteViews.setTextViewText(R.id.placeholder2, "www.aeromap.cz");
