@@ -29,8 +29,12 @@ public class MyWidgetProvider extends AppWidgetProvider {
         String srazky = null;
         String stredni = null;
         String kalamita = null;
-        String pbar = null;
         String RH = null;
+        String srazkyD = null;
+        String Tavg = null;
+        String pbar = null;
+        String pero = null;
+        String padli = null;
 
 
 
@@ -44,20 +48,24 @@ public class MyWidgetProvider extends AppWidgetProvider {
                     R.layout.widget_layout);
 
             // Set the text
-            remoteViews.setTextViewText(R.id.vinice, "Vinice Ťuhýkov :      ");
+            remoteViews.setTextViewText(R.id.vinice, "Mikulčice :      ");
             Time today = new Time(Time.getCurrentTimezone());
             today.setToNow();
 
 
             try {
-                tbar = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=288");
-                tmin = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=227");
-                tmax = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=226");
-                srazky = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=294");
-                stredni = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=296");
-                kalamita = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=295");
-                RH = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=221");
-                pbar = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=287");
+                tbar = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=171");
+                tmin = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=173");
+                tmax = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=172");
+                srazky = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=193");
+                stredni = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=31");
+                kalamita = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=32");
+                RH = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=157");
+                srazkyD = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=189");
+                Tavg = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=214");
+                pbar = new Communicator().executeHttpGets("http://www.openstars.cz/emoncms/feed/value.json?apikey=04ccd96a8f3bdba5c7c4670c24a997d9&id=62");
+                pero = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=212");
+                padli = new Communicator().executeHttpGets("http://www.vinice40.cz/meteo/feed/value.json?apikey=0d53cb487ff215fee200a0003a4f80a4&id=210");
 
                 Log.w("WidgetExample", String.valueOf(tbar));
             } catch (Exception e) {
@@ -67,17 +75,22 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
             }
 
-            remoteViews.setTextViewText(R.id.tbar, "Tbar: " + (tbar != null ? tbar.substring(1, tbar.length()-2) : null) + " C");
-            remoteViews.setTextViewText(R.id.tmin, "Tmin: " + (tmin != null ? tmin.substring(1, tmin.length() - 2) : null) +" C");
-            remoteViews.setTextViewText(R.id.tmax, "Tmax: " + (tmax != null ? tmax.substring(1, tmax.length() - 2) : null) +" C");
-            remoteViews.setTextViewText(R.id.srazky, "Srážky: " + (srazky != null ? srazky.substring(1, srazky.length() - 3) : null) +" mm");
-            remoteViews.setTextViewText(R.id.stredni, "Střední: " + (stredni != null ? stredni.substring(1, stredni.length() - 2) : null) +" mm              ");
-            remoteViews.setTextViewText(R.id.kalamita, "Kalamita: " + (kalamita != null ? kalamita.substring(1, kalamita.length() - 2) : null) +" mm");
-            remoteViews.setTextViewText(R.id.RH, "RH: " + (RH != null ? RH.substring(1, RH.length() - 2) : null) +" %");
-            remoteViews.setTextViewText(R.id.pbar, "Dnešní: " + (pbar != null ? pbar.substring(1, pbar.length() - 5) : null) +" mm");
+            remoteViews.setTextViewText(R.id.tbar, "Tbar: " + (tbar != null ? tbar.substring(0, tbar.length() -1) : null) + " C");
+            remoteViews.setTextViewText(R.id.tmin, "Tmin: " + (tmin != null ? tmin.substring(0, tmin.length() -1) : null) +" C");
+            remoteViews.setTextViewText(R.id.tmax, "Tmax: " + (tmax != null ? tmax.substring(0, tmax.length() -1) : null) +" C");
+            remoteViews.setTextViewText(R.id.srazky, "Srážky: " + (srazky != null ? srazky.substring(0, srazky.length() -1) : null) +" mm");
+            remoteViews.setTextViewText(R.id.stredni, "Střední: " + (stredni != null ? stredni.substring(0, stredni.length() -1) : null) +" mm              ");
+            remoteViews.setTextViewText(R.id.kalamita, "Kalamita: " + (kalamita != null ? kalamita.substring(0, kalamita.length() -1) : null) +" mm");
+            remoteViews.setTextViewText(R.id.RH, "RH: " + (RH != null ? RH.substring(0, RH.length() -1) : null) +" %");
+            remoteViews.setTextViewText(R.id.srazkyD, "Dnešní: " + (srazkyD != null ? srazkyD.substring(0, srazkyD.length() -1) : null) +" mm");
+            remoteViews.setTextViewText(R.id.Tavg, "Tavg: " + (Tavg != null ? Tavg.substring(0, Tavg.length() -1) : null) +" C  ");
+            remoteViews.setTextViewText(R.id.pbar, "Pbar: " + (pbar != null ? pbar.substring(1, pbar.length() - 3) : null) +" hPa");
+            remoteViews.setTextViewText(R.id.pero, "Plíseň [0-3]: " + (pero != null ? pero.substring(0, pero.length() -1) : null) +"");
+            remoteViews.setTextViewText(R.id.padli, "Padlí: " + (padli != null ? padli.substring(0, padli.length() -1) : null) +" %");
+
             remoteViews.setTextViewText(R.id.update, today.format("%k:%M:%S"));
             remoteViews.setTextViewText(R.id.placeholder1, "Vinice 4.0");
-            remoteViews.setTextViewText(R.id.placeholder2, "www.aeromap.cz");
+            remoteViews.setTextViewText(R.id.placeholder2, "www.vinice40.cz");
 
             // Register an onClickListener
             Intent intent = new Intent(context, MyWidgetProvider.class);

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:widgetCategory="keyguard|home_screen"
     android:initialLayout="@layout/widget_layout"
-    android:minHeight="142dp"
+    android:minHeight="182dp"
     android:minWidth="286dp"
     android:updatePeriodMillis="30000" >
 

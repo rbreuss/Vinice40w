@@ -5,7 +5,7 @@
     android:layout_margin="8dip"
     android:background="@drawable/myshape"
     android:columnCount="2"
-    android:rowCount="6"
+    android:rowCount="8"
     android:visibility="visible">
 
     <TextView
@@ -99,6 +99,28 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/Tavg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/srazkyD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
         android:id="@+id/RH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,6 +130,18 @@
         android:maxLines="1"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/pero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
 
     <TextView
         android:id="@+id/pbar"
@@ -120,6 +154,16 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/padli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/placeholder1"
